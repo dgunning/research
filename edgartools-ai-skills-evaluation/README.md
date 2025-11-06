@@ -65,6 +65,18 @@ balance = latest_10k.xbrl().statements.balance_sheet()
 
 Full research script: [`atlanta_braves_research.py`](atlanta_braves_research.py)
 
+**Running the script:**
+```bash
+# No setup required - uv handles dependencies automatically
+uv run atlanta_braves_research.py
+
+# Or make executable and run directly
+chmod +x atlanta_braves_research.py
+./atlanta_braves_research.py
+```
+
+The script uses PEP 723 inline dependencies, so it's self-contained and immediately runnable.
+
 ## Agent Usability Evaluation
 
 ### Strengths (What Works Well)

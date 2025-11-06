@@ -1,4 +1,10 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#     "edgartools>=4.26.0",
+# ]
+# ///
 """
 Research script for Atlanta Braves (BATRB) using edgartools.
 
@@ -7,6 +13,9 @@ This script demonstrates using edgartools to:
 2. Retrieve recent filings
 3. Extract financial statements
 4. Analyze the data
+
+Usage:
+    uv run atlanta_braves_research.py
 """
 
 from edgar import Company, set_identity

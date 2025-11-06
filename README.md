@@ -122,6 +122,26 @@ for dirname, commit_date in subdirs_with_dates:
 
 ---
 
+## Repository Structure
+
+Each research project is self-contained in its own directory with:
+
+- **README.md** - Research findings starting with the original prompt
+- **notes.md** - Research log documenting the process
+- **Scripts** - Self-contained Python scripts using [uv](https://docs.astral.sh/uv/) with inline dependencies
+- **Supporting files** - Code, data, outputs (no external repos copied)
+
+### Running Scripts
+
+Research scripts use uv with PEP 723 inline dependencies, making them immediately runnable without setup:
+
+```bash
+# No pip install needed - just run!
+uv run project-folder/script.py
+```
+
+See [AGENTS.md](AGENTS.md) and [SCRIPTS.md](SCRIPTS.md) for guidelines and templates.
+
 ## Updating this README
 
 This README uses [cogapp](https://nedbatchelder.com/code/cog/) to automatically generate project descriptions.
