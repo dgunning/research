@@ -114,6 +114,10 @@ for dirname, commit_date in subdirs_with_dates:
     print()  # Add blank line between entries
 
 ]]]-->
+### [venv](https://github.com/dgunning/research/tree/main/venv) (2025-11-06)
+
+*No description available.*
+
 <!--[[[end]]]-->
 
 ---
@@ -143,6 +147,7 @@ The script automatically:
 - If not, it generates a new summary using `llm -m <!--[[[cog
 print(MODEL, end='')
 ]]]-->
+github/gpt-4.1
 <!--[[[end]]]-->` with a prompt that creates engaging descriptions with bullets and links
 - Creates markdown links to each project folder on GitHub
 - New summaries are saved to `_summary.md` to avoid regenerating them on every run
