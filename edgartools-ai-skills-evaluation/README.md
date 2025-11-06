@@ -288,6 +288,7 @@ With the critical fixes implemented: **9.2/10**
 - [`notes.md`](notes.md) - Detailed research log
 - [`atlanta_braves_research.py`](atlanta_braves_research.py) - Complete research script
 - [`research_output.txt`](research_output.txt) - Full console output
+- [`efficiency-analysis.md`](efficiency-analysis.md) - Meta-analysis of my own token efficiency (C+ grade: 40% efficient)
 
 ## Links
 
