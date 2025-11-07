@@ -543,7 +543,7 @@ pull_request:
 - CLAUDE.md (if in project root)
 - .claude/commands/ (custom slash commands)
 - .claude/agents/ (subagent definitions)
-- .mcp.json (MCP server configuration)
+- .mcp.json (MCP server configuration) - **BUT with critical limitation**
 - settings.json (if in project .claude/)
 
 **What Doesn't Sync:**
@@ -558,6 +558,150 @@ pull_request:
 - Use project-level configs, not global
 - Document setup in README
 - Team gets consistent experience
+
+### MCP Configuration: CLI vs Web (Critical Differences)
+
+**Architecture Constraint:**
+- CLI: Runs on your machine, can spawn local processes
+- Web: Runs in Anthropic's cloud sandbox, NO local process access
+
+**MCP Transport Support:**
+
+| Transport | CLI | Web | Use Case |
+|-----------|-----|-----|----------|
+| **stdio** (local processes) | ✅ | ❌ | Filesystem, Playwright, local DB |
+| **HTTP** (remote servers) | ✅ | ✅ | Company APIs, cloud services |
+
+**Project Config (.mcp.json) - Syncs BUT...**
+
+✅ **File syncs via git**
+❌ **stdio servers won't work on web!**
+
+```json
+// .mcp.json (checked into git)
+{
+  "mcpServers": {
+    "remote-api": {
+      "transport": "http",           // ✅ Works on CLI + Web
+      "url": "https://api.example.com/mcp"
+    },
+    "local-filesystem": {
+      "command": "npx",               // ❌ CLI only (web can't spawn processes)
+      "args": ["-y", "@modelcontextprotocol/server-filesystem"]
+    }
+  }
+}
+```
+
+**User Config (~/.claude.json) - Never Syncs**
+
+```json
+// ~/.claude.json (local machine only)
+{
+  "mcpServers": {
+    "dev-filesystem": {
+      "command": "npx",               // CLI-only power features
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
+    },
+    "local-postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres"],
+      "env": {
+        "DATABASE_URL": "postgresql://localhost:5432/dev"
+      }
+    }
+  }
+}
+```
+
+**Recommended Strategy:**
+
+**For Cross-Platform Teams:**
+```json
+// .mcp.json - ONLY HTTP servers
+{
+  "mcpServers": {
+    "company-api": {
+      "transport": "http",
+      "url": "https://mcp.company.com"
+    }
+  }
+}
+
+// Result: Works everywhere (CLI + Web)
+```
+
+**For CLI Power Users:**
+```json
+// .mcp.json - HTTP servers (team-wide)
+{
+  "mcpServers": {
+    "prod-api": {
+      "transport": "http",
+      "url": "https://api.example.com"
+    }
+  }
+}
+
+// ~/.claude.json - stdio servers (personal, CLI-only)
+{
+  "mcpServers": {
+    "local-filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-playwright"]
+    }
+  }
+}
+
+// Result:
+// - CLI gets both HTTP + stdio (full power)
+// - Web gets HTTP only (still functional)
+// - No conflicts
+```
+
+**Configuration Scopes:**
+
+```
+Priority Order:
+1. Local (.claude/settings.json)     ❌ Never syncs
+2. Project (.mcp.json)               ✅ Syncs (but stdio won't work on web)
+3. User (~/.claude.json)             ❌ Never syncs
+
+Sync Mechanism: Git (not automatic cloud sync)
+```
+
+**Common Gotchas:**
+
+❌ **Don't check stdio servers into .mcp.json**
+- They'll be in git but won't work on web
+- Team members using web will see errors
+
+❌ **Don't expect local filesystem access on web**
+- Web runs in isolated cloud sandbox
+- No access to your machine's files
+
+✅ **Do use HTTP servers for cross-platform**
+- Works everywhere
+- Better for production integrations
+
+✅ **Do keep stdio servers in ~/.claude.json**
+- CLI-only power features
+- Not checked into git
+- Personal development enhancements
+
+**Decision Matrix:**
+
+| Need | Solution | CLI | Web |
+|------|----------|-----|-----|
+| Team API access | HTTP in .mcp.json | ✅ | ✅ |
+| Local file access | stdio in ~/.claude.json | ✅ | ❌ |
+| Browser automation | stdio in ~/.claude.json | ✅ | ❌ |
+| Local database | stdio in ~/.claude.json | ✅ | ❌ |
+| Cloud service | HTTP in .mcp.json | ✅ | ✅ |
 
 ---
 

@@ -135,15 +135,105 @@ your-project/
 - `CLAUDE.md`
 - `.claude/commands/`
 - `.claude/agents/`
-- `.mcp.json`
+- `.mcp.json` ⚠️ **BUT with critical limitation (see below)**
 - `.claude/settings.json`
 
 ❌ **Doesn't sync:**
 - `~/.claude/settings.json` (user-level)
 - `.claude/settings.local.json` (personal)
 - Global CLAUDE.md
+- `~/.claude.json` (user MCP servers)
 
 **Strategy:** Check `.claude/` into git for team consistency.
+
+### ⚠️ MCP Configuration: The Critical Sync Limitation
+
+**The Architecture Constraint:**
+
+```
+CLI (Your Machine)                    Web (Anthropic Cloud)
+├── Can spawn local processes  ✅     ├── Isolated sandbox       ⚠️
+├── Access local filesystem    ✅     ├── No local access        ❌
+├── Run stdio MCP servers      ✅     ├── stdio servers          ❌
+└── Connect HTTP MCP servers   ✅     └── HTTP servers only      ✅
+```
+
+**MCP Transport Support:**
+
+| Transport | CLI | Web | Example Use Case |
+|-----------|-----|-----|------------------|
+| **stdio** (local processes) | ✅ | ❌ | Filesystem, Playwright, local DB |
+| **HTTP** (remote servers) | ✅ | ✅ | Company APIs, cloud services |
+
+**What This Means:**
+
+While `.mcp.json` **file syncs via git**, **stdio servers won't work on web!**
+
+```json
+// ❌ PROBLEM: This syncs but breaks web version
+// .mcp.json (checked into git)
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",  // ❌ Web can't spawn local processes!
+      "args": ["-y", "@modelcontextprotocol/server-filesystem"]
+    }
+  }
+}
+```
+
+**The Solution: Separate Concerns**
+
+**For cross-platform teams (.mcp.json - checked in):**
+```json
+{
+  "mcpServers": {
+    "company-api": {
+      "transport": "http",
+      "url": "https://mcp.company.com",
+      "env": {
+        "API_KEY": "${COMPANY_API_KEY}"
+      }
+    }
+  }
+}
+```
+✅ Works on CLI ✅ Works on Web ✅ Team consistency
+
+**For CLI power users (~/.claude.json - local only):**
+```json
+{
+  "mcpServers": {
+    "local-filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-playwright"]
+    },
+    "local-postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres"],
+      "env": {
+        "DATABASE_URL": "postgresql://localhost:5432/dev"
+      }
+    }
+  }
+}
+```
+✅ CLI gets full power (HTTP + stdio)
+❌ Never syncs to web (and shouldn't!)
+
+**Configuration Scope Priority:**
+
+```
+1. Local (.claude/settings.json)    ❌ Never syncs
+2. Project (.mcp.json)              ✅ Syncs via git (but stdio breaks web)
+3. User (~/.claude.json)            ❌ Never syncs
+
+Sync Mechanism: Git (not automatic cloud sync)
+```
 
 ---
 
@@ -332,6 +422,84 @@ git push
 
 # Now works on both CLI and Web!
 ```
+
+### MCP Configuration for Web: Critical Limitations
+
+**⚠️ Remember:** Web version **cannot run stdio MCP servers** (local processes)
+
+**❌ This will NOT work on web:**
+```json
+// .mcp.json (don't do this if team uses web!)
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",  // ❌ Web can't spawn local processes
+      "args": ["-y", "@modelcontextprotocol/server-filesystem"]
+    }
+  }
+}
+```
+
+**✅ This WILL work on both CLI and web:**
+```json
+// .mcp.json (cross-platform compatible)
+{
+  "mcpServers": {
+    "company-api": {
+      "transport": "http",  // ✅ Works everywhere
+      "url": "https://mcp.company.com",
+      "env": {
+        "API_KEY": "${COMPANY_API_KEY}"
+      }
+    }
+  }
+}
+```
+
+**Best Practice: Hybrid Approach**
+
+```bash
+# 1. Project config (.mcp.json) - HTTP only, for team
+cat > .mcp.json << 'EOF'
+{
+  "mcpServers": {
+    "prod-api": {
+      "transport": "http",
+      "url": "https://api.example.com/mcp"
+    }
+  }
+}
+EOF
+
+# 2. Local config (~/.claude.json) - stdio servers, for CLI power
+cat > ~/.claude.json << 'EOF'
+{
+  "mcpServers": {
+    "local-filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-playwright"]
+    }
+  }
+}
+EOF
+
+# Result:
+# - CLI gets both HTTP + stdio (full power)
+# - Web gets HTTP only (still functional)
+# - Team members using web won't see errors
+```
+
+**Decision Guide:**
+
+| Your Team Uses | .mcp.json Should Contain | ~/.claude.json Can Contain |
+|----------------|-------------------------|---------------------------|
+| CLI only | HTTP or stdio (your choice) | Additional stdio servers |
+| Web only | **HTTP servers ONLY** | N/A (doesn't sync) |
+| Both CLI and Web | **HTTP servers ONLY** | stdio servers (CLI bonus) |
 
 ### Security on Web
 
@@ -775,6 +943,32 @@ claude
 - Jira operations (stateless HTTP)
 - AWS commands (stateless API calls)
 - GitHub operations (stateless API)
+
+### Transport Types: stdio vs HTTP
+
+**Critical distinction for CLI vs Web:**
+
+**stdio Transport (Local Processes):**
+```json
+{
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-filesystem", "/workspace"]
+}
+```
+- ✅ CLI: Full support
+- ❌ Web: **Not supported** (no local process execution)
+- Use for: Local development tools (filesystem, Playwright, local DB)
+
+**HTTP Transport (Remote Servers):**
+```json
+{
+  "transport": "http",
+  "url": "https://mcp.example.com"
+}
+```
+- ✅ CLI: Full support
+- ✅ Web: **Full support**
+- Use for: Cloud services, company APIs, production integrations
 
 ### Configuration
 
