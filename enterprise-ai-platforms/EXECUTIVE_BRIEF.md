@@ -13,6 +13,7 @@ The enterprise AI platform market has reached a critical decision point in 2025.
 ### Critical Market Dynamics
 
 **Market Leaders (Q2 2025)**:
+
 | Vendor | Revenue | Market Share | YoY Growth | Strategic Position |
 |--------|---------|--------------|------------|-------------------|
 | AWS | $30.9B | 30% | 17.5% | Incumbent leader, slowing |
@@ -375,17 +376,17 @@ without penalty if increases exceed this threshold.
 
 ### Wrong Choices to Avoid
 
-❌ **Delay**: Market moving too fast, capacity constraints worsen
-❌ **No Governance**: Regulatory requirements accelerating (60% by 2026)
-❌ **Ignoring Lock-in**: Exit costs can exceed platform benefits
-❌ **Single Model**: Missing 40-60% cost optimization opportunity
+- ❌ **Delay**: Market moving too fast, capacity constraints worsen
+- ❌ **No Governance**: Regulatory requirements accelerating (60% by 2026)
+- ❌ **Ignoring Lock-in**: Exit costs can exceed platform benefits
+- ❌ **Single Model**: Missing 40-60% cost optimization opportunity
 
 ### Winning Strategy
 
-✓ **Make Platform Decision**: Q1 2025 using this framework
-✓ **Implement Governance**: ISO 42001 or NIST AI RMF immediately
-✓ **Build Portability**: Multi-model orchestration architecture
-✓ **Prepare for Agents**: 40% of apps will need agents by end 2026
+- ✓ **Make Platform Decision**: Q1 2025 using this framework
+- ✓ **Implement Governance**: ISO 42001 or NIST AI RMF immediately
+- ✓ **Build Portability**: Multi-model orchestration architecture
+- ✓ **Prepare for Agents**: 40% of apps will need agents by end 2026
 
 ---
 
