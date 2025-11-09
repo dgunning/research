@@ -77,7 +77,7 @@ MCP follows a **client-host-server architecture**:
 │   (Claude Desktop, Cursor IDE)      │
 │  ┌───────────────────────────────┐  │
 │  │  Client 1  │  Client 2  │ ... │  │
-│  └─────┬──────┴─────┬──────┴────┘  │
+│  └─────┬──────┴─────┬──────┴─────┘  │
 └────────┼────────────┼───────────────┘
          │            │
     ┌────▼────┐  ┌───▼─────┐
@@ -146,7 +146,7 @@ They operate at **different layers of abstraction**:
 ┌────────────────────────────────────┐
 │         AI Agent (LLM)             │
 ├────────────────────────────────────┤
-│    MCP (Orchestration Layer)      │  ← Manages context, tool selection
+│    MCP (Orchestration Layer)       │  ← Manages context, tool selection
 ├────────────────────────────────────┤
 │      MCP Servers (Adapters)        │  ← Wraps REST APIs for AI
 ├────────────────────────────────────┤
@@ -651,6 +651,7 @@ Helps agents select the right tool at the right time
 - Security researchers "surprised RCE still emerging in 2025"
 
 **3. Critical CVEs**
+
 | CVE | Impact | Description |
 |-----|--------|-------------|
 | CVE-2025-6514 | 437,000+ downloads | Single npm package vulnerability |
