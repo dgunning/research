@@ -67,6 +67,18 @@ from bs4 import BeautifulSoup
 
 See [SCRIPTS.md](SCRIPTS.md) for more templates and examples.
 
+## Generating large files
+When generating large reports or README files, split this into separate tasks and generate smaller temporary files. 
+For example, if you need to create a 10,000-word report, break it down into sections:
+1. Generate each section individually and save to separate files (e.g., section1.md, section2.md).
+2. Review and edit each section as needed.
+3. Combine the sections into the final report file (e.g., README.md).
+4. Review the final combined file for coherence and formatting.
+5. This reduces the risk of timeouts or incomplete outputs.
+
+Then clean up the temporary files if desired.
+
+
 ## Final Commit Contents
 
 Your final commit should include just that folder and selected items from its contents:
