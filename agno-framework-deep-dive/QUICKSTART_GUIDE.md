@@ -960,12 +960,12 @@ agent.print_response(query, stream=True)  # Shows progressive output
 
 ## Key Takeaways
 
-✅ **Installation**: `pip install agno[openai,anthropic,postgres]`
-✅ **Basic Pattern**: Agent + Model + Tools + Instructions
-✅ **Memory**: Use db + session_id for conversations
-✅ **Knowledge**: RAG with PgVectorKnowledgeBase
-✅ **Production**: AgentOS + PostgreSQL + Docker
-✅ **Best Practice**: Environment variables, error handling, structured instructions
+- ✅ **Installation**: `pip install agno[openai,anthropic,postgres]`
+- ✅ **Basic Pattern**: Agent + Model + Tools + Instructions
+- ✅ **Memory**: Use db + session_id for conversations
+- ✅ **Knowledge**: RAG with PgVectorKnowledgeBase
+- ✅ **Production**: AgentOS + PostgreSQL + Docker
+- ✅ **Best Practice**: Environment variables, error handling, structured instructions
 
 **Remember:** Start simple, iterate quickly, and always test with real use cases.
 
