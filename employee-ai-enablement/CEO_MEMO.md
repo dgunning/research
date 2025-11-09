@@ -1,9 +1,13 @@
 # Employee AI Enablement Strategy: CEO Memo
 
 **To**: CEO
+
 **From**: CTO / Chief Digital Officer
+
 **Date**: November 2025
+
 **Subject**: Strategic AI Enablement Across All Workforce Roles - Urgent Action Required
+
 **Classification**: CONFIDENTIAL - Strategic
 
 ---
