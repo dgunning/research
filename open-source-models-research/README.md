@@ -10,7 +10,7 @@ The open source AI landscape has undergone a dramatic transformation in 2024-202
 
 **Key Findings:**
 - **Performance Parity**: Chinese open source models have achieved parity with leading Western proprietary models (GPT-4, Claude)
-- **Cost Efficiency**: DeepSeek-R1 achieved GPT-4-level performance at **$5.6M training cost** vs GPT-4's $100M+
+- **Cost Efficiency**: DeepSeek-R1 achieved GPT-4-level performance at 5.6M training cost vs GPT-4's $100M+
 - **Innovation Leadership**: Novel architectures (MoE), ultra-long context (1M+ tokens), and native tool-thinking fusion
 - **Open Source Strategy**: Chinese companies favor open source while US companies remain largely proprietary
 - **Enterprise Adoption**: 80%+ of Chinese enterprises adopting open source LLMs, vs 13% in Western markets

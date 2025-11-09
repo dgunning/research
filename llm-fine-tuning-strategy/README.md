@@ -117,9 +117,9 @@ Level 1: Prompt Engineering
 
 ### Tier 2: RAG - Retrieval-Augmented Generation (Most Common)
 
-**Effort:** Days to weeks
-**Cost:** $70-1,000/month
-**ROI:** High for dynamic data
+- **Effort:** Days to weeks
+- **Cost:** $70-1,000/month
+- **ROI:** High for dynamic data
 
 **How It Works:**
 ```
@@ -136,12 +136,12 @@ User Query → Vector DB Search → Retrieved Context + Query → LLM → Respon
 - Corporate knowledge bases
 
 **Advantages:**
-✅ More secure (data stays in your control)
-✅ Scalable
-✅ Cost-efficient
-✅ Easy to update (no retraining)
-✅ Trustworthy (cites sources)
-✅ Lower privacy risk
+- ✅ More secure (data stays in your control)
+- ✅ Scalable
+- ✅ Cost-efficient
+- ✅ Easy to update (no retraining)
+- ✅ Trustworthy (cites sources)
+- ✅ Lower privacy risk
 
 **When to Move Beyond:**
 - Retrieval latency unacceptable
@@ -173,18 +173,18 @@ Base Model + Your Data → Training Process → Custom Fine-Tuned Model
 - When you have 10,000+ quality examples
 
 **Advantages:**
-✅ Deep domain knowledge internalization
-✅ Consistent behavior
-✅ Custom tone/style
-✅ Fewer tokens per request (long-term cost savings)
-✅ No retrieval latency
+- ✅ Deep domain knowledge internalization
+- ✅ Consistent behavior
+- ✅ Custom tone/style
+- ✅ Fewer tokens per request (long-term cost savings)
+- ✅ No retrieval latency
 
 **Disadvantages:**
-❌ Expensive and time-consuming
-❌ Requires significant quality data
-❌ Difficult to update (must retrain)
-❌ Higher privacy risks
-❌ More complex to maintain
+- ❌ Expensive and time-consuming
+- ❌ Requires significant quality data
+- ❌ Difficult to update (must retrain)
+- ❌ Higher privacy risks
+- ❌ More complex to maintain
 
 ---
 
@@ -264,16 +264,16 @@ Fine-Tuning for:              RAG for:
 - 4-10× faster training
 
 **Pros:**
-✅ Near-full performance at fraction of cost
-✅ Fast iteration
-✅ Small adapter files (easy versioning)
-✅ Multiple adapters per base model
-✅ Production-ready in 2025
+- ✅ Near-full performance at fraction of cost
+- ✅ Fast iteration
+- ✅ Small adapter files (easy versioning)
+- ✅ Multiple adapters per base model
+- ✅ Production-ready in 2025
 
 **Cons:**
-❌ Slightly lower accuracy than full tuning
-❌ Requires moderate GPU resources
-❌ Learning curve for optimization
+- ❌ Slightly lower accuracy than full tuning
+- ❌ Requires moderate GPU resources
+- ❌ Learning curve for optimization
 
 **Cost Example:**
 - Full fine-tuning: $24 (multiple GPUs, hours)
@@ -301,15 +301,15 @@ Fine-Tuning for:              RAG for:
 - Enables fine-tuning on consumer hardware
 
 **Pros:**
-✅ Extreme memory efficiency
-✅ Enables large models on small hardware
-✅ Nearly free inference
-✅ Democratizes fine-tuning
+- ✅ Extreme memory efficiency
+- ✅ Enables large models on small hardware
+- ✅ Nearly free inference
+- ✅ Democratizes fine-tuning
 
 **Cons:**
-❌ Small accuracy trade-off
-❌ Slightly slower inference
-❌ More complex setup
+- ❌ Small accuracy trade-off
+- ❌ Slightly slower inference
+- ❌ More complex setup
 
 **Cost Example:**
 - QLoRA: $2-6 (single A100, 2 hours)
