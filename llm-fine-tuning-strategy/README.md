@@ -446,6 +446,7 @@ Costs:
 ### Data Quality > Data Quantity
 
 **Non-Negotiables:**
+
 - ✅ **Accurate**: No errors, verified facts
 - ✅ **Unbiased**: Representative, not skewed
 - ✅ **Clean**: No duplicates, properly formatted
@@ -453,6 +454,7 @@ Costs:
 - ✅ **Relevant**: Task-specific, domain-appropriate
 
 **Quality Indicators:**
+
 | Metric | Target | Impact |
 |--------|--------|--------|
 | Accuracy | >95% | Direct performance |
@@ -475,6 +477,7 @@ Costs:
 - ✅ Synthetic data augmentation multiplies effective size
 
 **Recommended Starting Points:**
+
 | Task Type | Minimum Examples | Optimal Examples |
 |-----------|------------------|------------------|
 | Classification | 1,000 | 10,000 |
@@ -514,6 +517,7 @@ Raw Data → Remove duplicates → Fix formatting → Handle missing values → 
 ```
 
 **Step 2: Formatting**
+
 | Data Type | Format Method |
 |-----------|---------------|
 | **Documents** | Paragraph chunks, Q&A pairs, keyword-paragraph |
