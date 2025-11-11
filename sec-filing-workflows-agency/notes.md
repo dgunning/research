@@ -221,6 +221,81 @@ Created three production-ready workflow examples:
 - Months 7-12: Scale with part-time help, expand to video/podcast, increase events
 - Year 2+: Platform build (marketplace), community program, sophisticated ABM
 
+### UX Design Guide (Post-SaaS, AI-Native)
+
+**Design Philosophy:**
+- Post-SaaS aesthetic (beyond generic blue gradients)
+- AI-native visual language
+- Upscale, elegant, techie positioning
+- Financial services sophistication
+
+**Color System:**
+- Primary dark palette: Obsidian (#0A0E1A), Slate (#1A1F2E), Graphite (#2A2F3E)
+- Accent colors: Electric Teal (#00D9D9), Quantum Violet (#8B5CF6)
+- Data colors: Signal Green, Amber Alert, Critical Red
+- Light mode support with Cloud Gray and Ghost White
+
+**Typography:**
+- Primary: Inter (modern, screen-optimized, open source)
+- Monospace: JetBrains Mono (developer credibility)
+- Type scale: 1.250 (Major Third) desktop, 1.200 (Minor Third) mobile
+- Line height: 1.6 body, 1.2 headings
+
+**Visual Style:**
+- Dark-first design (sophisticated, technical)
+- Subtle gradients (Teal to Violet)
+- Refined shadows and depth (6-level elevation system)
+- Pattern backgrounds (grid, dots, noise texture)
+- Border radius: 4px (small) to 16px (large)
+
+**Components:**
+- Primary buttons: Electric Teal with hover lift
+- AI feature buttons: Animated gradient (Teal to Violet)
+- Cards: Slate background, subtle borders, hover elevation
+- Inputs: Dark with Teal focus states
+- Navigation: Sticky, blur backdrop
+- Loading states: Teal spinner, shimmer skeletons
+
+**Layout:**
+- 12-column grid system
+- 8px spacing scale
+- Container widths: 1280px (XL), 1024px (L), 768px (M), 640px (S)
+- Breakpoints: 640px, 768px, 1024px, 1280px, 1536px
+
+**Motion & Animation:**
+- Fast transitions: 150-200ms
+- Ease-out timing function
+- Subtle hover effects (lift, glow)
+- Loading animations (shimmer, pulse)
+- AI elements: Glow pulse, gradient shift
+
+**Accessibility:**
+- WCAG 2.1 AA compliance minimum (AAA target)
+- Color contrast: 15.8:1 (text on dark), 12.6:1 (text on light)
+- Keyboard navigation fully supported
+- Focus states visible
+- Screen reader optimized
+- Reduced motion respected
+
+**Implementation:**
+- Utility-first with Tailwind CSS (rapid development)
+- Radix UI primitives (accessible, unstyled)
+- Mobile-first responsive design
+- Performance targets: LCP < 2.5s, FCP < 1.5s, Lighthouse 90+
+
+**Brand Applications:**
+- Logo: Teal icon with wordmark
+- Marketing: Dark cards, subtle patterns, gradient accents
+- Social media: Consistent branded templates
+- Email: Professional signature with Teal accents
+
+**Key Differentiators:**
+1. Dark-first (not an afterthought)
+2. Teal + Violet palette (unique, memorable)
+3. Technical precision (every detail considered)
+4. Post-SaaS refinement (sophisticated, not generic)
+5. AI-native design language
+
 ### Project Deliverables
 
 Complete research package includes:
@@ -230,7 +305,8 @@ Complete research package includes:
 4. technical-architecture.md - Technical architecture and patterns
 5. business-considerations.md - Financial analysis and projections
 6. web-marketing-strategy.md - Marketing and web presence strategy (bootstrapped)
-7. example_classic_etl.py - Production ETL workflow
-8. example_ai_risk_analysis.py - AI risk analysis workflow
-9. example_multi_agent.py - Multi-agent orchestration workflow
+7. ux-design-guide.md - Complete UX/UI design system (post-SaaS, AI-native)
+8. example_classic_etl.py - Production ETL workflow
+9. example_ai_risk_analysis.py - AI risk analysis workflow
+10. example_multi_agent.py - Multi-agent orchestration workflow
 
