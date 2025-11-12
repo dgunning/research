@@ -147,3 +147,38 @@ Create a new research project all about being a top tier writer - primarily tech
 - Visual explanations gaining importance (diagrams, animations)
 - Interactive code examples becoming standard
 
+---
+
+## Session: Creating Writing Exercises - 2025-11-12
+
+### Goal
+Create practical writing exercises for users to practice technical writing skills covered in the research project.
+
+### Approach
+1. **Create writing-exercises.md** - Comprehensive exercise framework
+   - Progressive difficulty levels (beginner, intermediate, advanced)
+   - Exercises for each blog post type (tutorial, deep dive, comparison, problem-solution, guide)
+   - Skill-specific exercises (clarity, structure, voice, technical accuracy)
+   - Self-assessment rubrics
+   - Sample solutions and commentary
+
+2. **Create exercise-prompts.md** - Ready-to-use writing prompts
+   - 50+ specific prompts across different categories
+   - Topic suggestions for each blog post type
+   - Audience targeting exercises
+   - Rewriting challenges
+   - Peer review exercises
+
+### Exercise Design Principles
+- **Progressive**: Start simple, build to complex
+- **Practical**: Based on real-world writing scenarios
+- **Specific**: Clear objectives and success criteria
+- **Actionable**: Users know exactly what to do
+- **Measurable**: Can assess their own progress
+
+### Exercise Categories
+1. **Foundation Exercises** - Building blocks (clarity, structure, voice)
+2. **Blog Type Exercises** - Practice each template type
+3. **Skill-Building Exercises** - Target specific weaknesses
+4. **Challenge Exercises** - Advanced real-world scenarios
+5. **Peer Review Exercises** - Learn by critiquing others
