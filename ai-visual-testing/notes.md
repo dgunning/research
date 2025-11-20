@@ -120,3 +120,72 @@ await expect(page).toHaveScreenshot({
 3. **LLM Analysis**: Use Claude/GPT-4V for semantic UI understanding
 4. **Full Automation**: Claude Computer Use for end-to-end AI-driven testing
 
+### Web Search Results - Round 5 (Chrome Browser Tools)
+
+#### Chrome DevTools Protocol (CDP)
+- **Foundation**: Powers Playwright and Puppeteer
+- **Performance**: Puppeteer 20-30% faster on Chrome due to direct CDP integration
+- **Capabilities**: Block resources, capture logs, performance tracing, screenshots
+- **Integration**: Direct CDP access in Playwright for advanced features
+
+#### Chrome DevTools MCP (2025)
+- **New Tool**: AI-driven extension built by Chrome team
+- **Built on**: CDP + Puppeteer
+- **Features**: AI-powered performance analysis, natural language debugging
+- **Integration**: Works with Claude/GPT for intelligent browser control
+
+#### Lighthouse
+- **What**: Open-source automated auditing (performance, accessibility, SEO)
+- **Accessibility**: Based on axe-core, catches 30-40% of issues automatically
+- **Stats**: 83.9% of top websites have low-contrast text issues
+- **Automation**: CLI, Node module, Lighthouse CI for continuous integration
+- **Integration**: cypress-audit, Playwright plugins available
+
+#### Built-in Contrast Checker
+- **WCAG Compliance**: Exact contrast ratio calculation (4.5:1 AA, 7:1 AAA)
+- **Three Methods**: Color picker, CSS Overview panel, Issues tab
+- **Suggested Colors**: Auto-suggests WCAG-compliant alternatives
+- **Value**: More precise than AI vision for compliance checking
+
+#### Coverage Tool
+- **Purpose**: Find unused CSS/JS code
+- **Export**: JSON format (Chrome 73+)
+- **Use Case**: Optimize page load, understand which styles are used
+- **Integration**: CDP API for programmatic access
+
+#### Vision Deficiency Emulation
+- **Types**: Protanopia, deuteranopia, tritanopia, achromatopsia, blurred vision
+- **Access**: Rendering panel in DevTools
+- **Integration**: Can capture screenshots with each deficiency type
+
+#### Chrome Extensions
+- **Percy Extension**: Visual regression using Plasmo framework
+- **LambdaTest**: Screenshots on 25+ browser/OS configs
+- **Awesome Screenshot**: Annotate, highlight, share
+- **GoFullPage**: 9M+ users, full-page capture with iframes
+- **Usersnap**: Bug reporting with visual collaboration
+
+## Final Insights
+
+### Chrome Tools Value Proposition:
+- **Free & Built-in**: No setup, no costs for core features
+- **WCAG Precision**: More accurate than AI for compliance
+- **Fast**: Native tools faster than API calls
+- **Complementary**: Chrome tools + AI = comprehensive coverage
+
+### Optimal Workflow:
+```
+Chrome DevTools (fast, free, precise)
+    ↓
+Lighthouse (automated accessibility)
+    ↓
+Playwright visual tests (pixel-level)
+    ↓
+AI Vision (semantic understanding)
+```
+
+### Cost Optimization:
+- Use free Chrome tools for 80% of checks
+- Reserve AI (Claude/GPT-4V) for semantic validation
+- Reduces API costs while maintaining comprehensive coverage
+
