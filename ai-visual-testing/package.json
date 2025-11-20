@@ -1,0 +1,30 @@
+{
+  "name": "ai-visual-testing-examples",
+  "version": "1.0.0",
+  "description": "AI-powered visual testing examples for frontend applications",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:basic": "playwright test example-1-playwright-basic.js",
+    "test:applitools": "playwright test example-2-applitools.js",
+    "test:percy": "percy exec -- playwright test example-3-percy.js",
+    "install:browsers": "npx playwright install"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@applitools/eyes-playwright": "^1.23.0",
+    "@percy/playwright": "^1.0.6",
+    "@percy/cli": "^1.30.1"
+  },
+  "keywords": [
+    "visual-testing",
+    "ai",
+    "playwright",
+    "testing",
+    "screenshot",
+    "regression"
+  ]
+}
