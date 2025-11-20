@@ -522,13 +522,41 @@ This repository includes comprehensive code examples for each approach:
    - Multi-tier testing workflow
    - CI/CD integration example
 
+### Chrome DevTools Examples
+
+7. **`example-7-chrome-devtools.js`** - Chrome DevTools integration ⭐
+   - Lighthouse accessibility audits
+   - CDP performance metrics
+   - Resource blocking for consistent screenshots
+   - CSS coverage analysis
+   - Vision deficiency simulation
+   - Automated contrast checking
+   - Complete DevTools audit workflow
+
+8. **`example-8-chrome-ai-hybrid.py`** - Chrome + AI hybrid approach ⭐
+   - Chrome DevTools for free baseline checks
+   - AI vision only when issues found
+   - Contrast checking with Claude analysis
+   - Vision deficiency accessibility testing
+   - Cost optimization (70-80% savings)
+   - Complete hybrid workflow
+
 ### Running the Examples
 
 **JavaScript examples**:
 ```bash
 npm install
 npx playwright install
+
+# Basic Playwright visual testing
 npx playwright test example-1-playwright-basic.js
+
+# Chrome DevTools integration
+npx playwright test example-7-chrome-devtools.js
+
+# Or use npm scripts
+npm run test:chrome
+npm run lighthouse
 ```
 
 **Python examples** (using uv):
@@ -538,6 +566,9 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Run any example directly
 uv run example-4-claude-vision.py
+
+# Chrome + AI hybrid approach
+uv run example-8-chrome-ai-hybrid.py
 ```
 
 **Configuration files**:
