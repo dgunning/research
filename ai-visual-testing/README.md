@@ -152,6 +152,8 @@ This research explores AI-powered visual testing approaches for frontend applica
 
 | Tool | Type | AI Level | Cost | Integration | Best Use Case |
 |------|------|----------|------|-------------|---------------|
+| **Chrome DevTools** | Browser Tools | None | Free | Built-in | WCAG compliance, debugging |
+| **Lighthouse** | Automated Audit | Medium | Free | Built-in | Accessibility, performance audits |
 | **Playwright toHaveScreenshot** | Pixel comparison | None | Free | Built-in | Simple, static pages |
 | **Applitools Eyes** | AI Visual Testing | High | Paid | Easy | Cross-browser, production apps |
 | **Percy (BrowserStack)** | AI Visual Testing | Medium | Paid | Easy | Visual regression, CI/CD |
@@ -159,6 +161,8 @@ This research explores AI-powered visual testing approaches for frontend applica
 | **GPT-4 Vision API** | LLM Vision | Very High | Pay-per-use | Custom | UI analysis, bug detection |
 | **Auto Playwright** | Test Generation | Medium | Free/Paid | Medium | Test creation automation |
 | **KaneAI** | AI Testing Agent | High | Paid | Easy | Natural language testing |
+
+**Note**: See [Chrome Browser Tools](chrome-tools.md) for detailed coverage of Chrome DevTools Protocol, Lighthouse, contrast checker, coverage tool, and extensions.
 
 ### Detailed Comparisons
 
@@ -546,6 +550,11 @@ uv run example-4-claude-vision.py
 
 ### 1. Start Simple, Add Intelligence Progressively
 
+**Tier 0: Foundation (Free)**
+- Use Chrome DevTools contrast checker during development
+- Run Lighthouse in CI/CD for accessibility baseline
+- Set up Chrome coverage tool to optimize test performance
+
 **Tier 1: Basic Coverage**
 - Start with Playwright's `toHaveScreenshot()` for critical pages
 - Establish baseline screenshots
@@ -558,7 +567,7 @@ uv run example-4-claude-vision.py
 
 **Tier 3: Semantic Validation**
 - Add Claude/GPT-4 Vision for:
-  - Accessibility checks
+  - Accessibility checks (beyond Lighthouse)
   - Design system compliance
   - UX issue detection
 
@@ -758,35 +767,39 @@ export default defineConfig({
 ### For Small Projects / Startups
 
 **Recommended Stack**:
-1. **Start**: Playwright `toHaveScreenshot()` for critical pages
-2. **Add**: Claude Vision API for accessibility checks (on-demand)
-3. **Cost**: Free (Playwright) + pay-as-you-go (Claude API)
+1. **Foundation**: Chrome DevTools contrast checker + Lighthouse (manual/CI)
+2. **Automated**: Playwright `toHaveScreenshot()` for critical pages
+3. **AI Analysis**: Claude Vision API for accessibility checks (on-demand)
+4. **Cost**: Free (Chrome + Playwright) + pay-as-you-go (Claude API)
 
-**Why**: Minimize costs while getting good coverage. Use AI selectively for high-value checks.
+**Why**: Maximize free tools first. Lighthouse catches 30-40% of accessibility issues automatically. Use AI selectively for high-value semantic checks.
 
 ### For Medium Projects / Growing Teams
 
 **Recommended Stack**:
-1. **Primary**: Applitools Eyes or Percy (choose based on preference)
-2. **Supplement**: Playwright for quick local testing
-3. **Advanced**: Claude Vision for accessibility and design compliance
-4. **Cost**: $99-299/month (Applitools/Percy) + API costs
+1. **Baseline**: Lighthouse CI in every PR (automated accessibility)
+2. **Visual Testing**: Applitools Eyes or Percy (choose based on preference)
+3. **Local Testing**: Playwright + Chrome DevTools for development
+4. **AI Analysis**: Claude Vision for accessibility and design compliance
+5. **Cost**: Free (Chrome tools) + $99-299/month (Applitools/Percy) + API costs
 
-**Why**: Balance automation with cost. AI tools reduce maintenance burden significantly.
+**Why**: Lighthouse provides free first-line defense. AI visual testing tools reduce maintenance burden. Chrome DevTools for precise WCAG compliance checking.
 
 ### For Large Projects / Enterprises
 
 **Recommended Stack**:
-1. **Visual Testing**: Applitools Eyes with Ultrafast Grid
-2. **Functional Testing**: Playwright with basic visual checks
-3. **AI Analysis**: Claude Vision API for:
+1. **Foundation**: Lighthouse CI + Chrome DevTools Protocol integration
+2. **Visual Testing**: Applitools Eyes with Ultrafast Grid
+3. **Functional Testing**: Playwright with basic visual checks
+4. **AI Analysis**: Claude Vision API for:
    - Accessibility audits
    - Design system compliance
    - UX quality checks
-4. **Test Generation**: Auto Playwright or KaneAI
-5. **Cost**: Enterprise plans + API costs
+5. **Test Generation**: Auto Playwright or KaneAI
+6. **Debugging**: Chrome DevTools MCP for AI-powered analysis
+7. **Cost**: Free (Chrome tools) + Enterprise plans + API costs
 
-**Why**: Comprehensive coverage, maximum automation, minimal maintenance. ROI from reduced manual testing.
+**Why**: Comprehensive coverage at all levels. Chrome tools provide free baseline. AI tools maximize automation. Minimal maintenance with maximum confidence.
 
 ### Hybrid Approach (Recommended for Most)
 
