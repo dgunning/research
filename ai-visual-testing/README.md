@@ -15,6 +15,7 @@ This research explores AI-powered visual testing approaches for frontend applica
 3. **Hybrid Approach Recommended**: Combining multiple techniques provides optimal coverage and efficiency
 4. **AI Reduces False Positives**: AI-powered tools (Applitools, Claude Vision) significantly reduce maintenance burden by distinguishing meaningful changes from rendering noise
 5. **Accessibility Bonus**: Vision-based AI can detect accessibility issues beyond traditional automated testing
+6. **Chrome Tools Add Value**: Built-in Chrome DevTools (Lighthouse, contrast checker, CDP) provide free, precise capabilities that complement AI testing
 
 ---
 
@@ -26,7 +27,8 @@ This research explores AI-powered visual testing approaches for frontend applica
 4. [Code Examples](#code-examples)
 5. [Best Practices](#best-practices)
 6. [Recommendations](#recommendations)
-7. [Resources](#resources)
+7. [Chrome Browser Tools](chrome-tools.md) ⭐ **New!**
+8. [Resources](#resources)
 
 ---
 
