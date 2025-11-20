@@ -189,3 +189,33 @@ AI Vision (semantic understanding)
 - Reserve AI (Claude/GPT-4V) for semantic validation
 - Reduces API costs while maintaining comprehensive coverage
 
+## Code Examples Created
+
+### Initial Examples (6):
+1. example-1-playwright-basic.js - Built-in Playwright visual testing
+2. example-2-applitools.js - Applitools Eyes AI testing
+3. example-3-percy.js - Percy/BrowserStack visual testing
+4. example-4-claude-vision.py - Claude Vision API examples
+5. example-5-gpt4-vision.py - GPT-4 Vision API examples
+6. example-6-hybrid-approach.py - Multi-tier hybrid testing
+
+### Chrome DevTools Examples (2):
+7. example-7-chrome-devtools.js - Complete Chrome DevTools integration
+   - Lighthouse accessibility audits
+   - CDP performance metrics and resource blocking
+   - CSS coverage analysis
+   - Vision deficiency simulation
+   - Automated contrast checking
+   - Full audit workflow
+
+8. example-8-chrome-ai-hybrid.py - Chrome + AI cost-optimized approach
+   - Chrome DevTools for free baseline (contrast, performance)
+   - AI vision only when issues found (70-80% cost reduction)
+   - Vision deficiency accessibility analysis
+   - Complete workflow demonstrating hybrid strategy
+
+### Supporting Files:
+- package.json - Updated with Lighthouse dependency and test scripts
+- playwright.config.js - Playwright configuration
+- chrome-tools.md - Complete Chrome DevTools documentation
+
