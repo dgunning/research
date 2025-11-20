@@ -509,3 +509,61 @@ Incentives from issuers to keep you from canceling: bonus points, statement cred
 - FlyerTalk forums (issuer-specific threads)
 
 ---
+
+## Canadian Market Research (2025-11-20)
+
+### Major Differences from US Market:
+
+**✅ GOOD NEWS:**
+- NO 5/24 rule! (biggest constraint in US doesn't exist)
+- More lenient application rules from most issuers
+- 6-month churn cycles vs 24-month in US
+- Strong transfer partner in Aeroplan
+
+**⚠️ CHALLENGES:**
+- Smaller signup bonuses ($200-800 vs $500-2000 USD)
+- Higher annual fees relative to benefits
+- Amex Canada strictly enforcing once-in-a-lifetime
+- Fewer no-FX fee cards
+
+### Key Canadian Issuers:
+- RBC - 90-day rule (strictest)
+- TD - 6-month cooldown on specific cards
+- CIBC - no strict rules (most flexible)
+- BMO - no strict rules
+- Scotiabank - 24-month welcome bonus restriction
+- Amex Canada - once-in-a-lifetime (separate from US)
+- MBNA - easiest to churn (3-month cycles possible)
+
+### Best Cards Found:
+1. Amex Cobalt: 5x food, $156/year
+2. Scotiabank Gold Amex: 6x groceries, $120/year
+3. CIBC Dividend Infinite: 4x gas/groceries, $120/year  
+4. Neo World Elite: 5x groceries, $0 fee
+5. RBC Avion Infinite: Flexible travel, $399/year
+
+### Transfer Partners:
+- Aeroplan (king in Canada) - transfers from Amex MR, Chase UR, Capital One, Bilt
+- RBC Avion - BA Avios (1:1), Cathay Asia Miles (1:1), AA (10:7), WestJet (1:1)
+- Scene+ (Scotiabank) - groceries, entertainment
+- TD Rewards - limited flexibility
+
+### Tax Treatment (CRA):
+- Personal rewards: NOT taxable (same as US)
+- Work-related rewards converted to cash: TAXABLE
+- Must not be alternative compensation
+- Report on T4 if taxable
+
+### Income Requirements Strictly Verified:
+- World Elite MC: $80k personal / $150k household
+- Visa Infinite Privilege: $200k personal / $250k household
+- Visa Infinite: $60k personal / $100k household
+
+### Optimal Canadian Strategy:
+1. Get Amex Cobalt FIRST (once-in-a-lifetime)
+2. Get Scotiabank Gold (before 24-month window)
+3. Space RBC apps 90+ days apart
+4. Churn CIBC/BMO/MBNA more aggressively (no restrictions)
+5. Follow 6-month cancel/reapply cycle (not 24-month)
+6. Focus on Aeroplan ecosystem
+
