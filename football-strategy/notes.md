@@ -135,3 +135,15 @@ Coverage schemes (number = deep defenders):
 - QB Progressions: Sequential reads - primary target (first read), then secondary options
 - Reading the defense: QB identifies coverage/pressure pre-snap to determine best option
 
+#### Additional Deep Dive: Offensive Play Calling Document
+Created comprehensive guide on Erhardt-Perkins play calling system:
+- Why E-P dominates modern NFL (communication efficiency, formation flexibility)
+- Comparison of all three systems (West Coast, Air Coryell, Erhardt-Perkins)
+- Real concept examples: Ghost, Mesh, Y-Sail, Levels, Snag
+- Complete play call structure and breakdown
+- Game planning process from off-season through weekly prep
+- Call sheet organization by down and distance
+- Current NFL teams using E-P (2025 Bears with Ben Johnson)
+- Practical application for coordinators, QBs, and players
+- Real-world game situation examples
+
