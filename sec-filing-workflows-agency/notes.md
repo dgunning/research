@@ -1,0 +1,404 @@
+# Research Notes: SEC Filing Workflows Design Agency
+
+## Project Overview
+Research and design a specialized agency that designs workflows and systems for accessing SEC filing data using edgartools. The agency will combine AI and non-AI approaches, leveraging both human expertise and AI agents.
+
+## Research Log
+
+### Initial Setup
+- Created project folder: sec-filing-workflows-agency
+- Started research on 2025-11-11
+
+### EdgarTools Research Findings
+
+**Key Capabilities:**
+- Comprehensive SEC data access (filings back to 1994)
+- 10-30x faster than alternatives (lxml & PyArrow optimized)
+- Built specifically for AI agents and LLMs
+- Production-ready MCP server included
+- Supports: 10-K, 10-Q, 8-K, Forms 3/4/5, 13F-HR
+- XBRL financial statement extraction
+- Automatic throttling to prevent SEC blocks
+- Text chunking for vector embeddings
+- Output formats: DataFrames, Objects, Clean Text
+
+**Unique Advantages:**
+- Only SEC EDGAR library built from ground up for AI agents
+- 1000+ tests, type hints, battle-tested
+- Simple API (3 lines vs 100+)
+- MIT license, open source
+
+### Market Use Cases Identified
+
+**Traditional Workflows:**
+1. Financial statement extraction and benchmarking
+2. Risk assessment and management (10-K risk factors)
+3. Investment decision-making and due diligence
+4. Insider trading tracking (Forms 3/4/5)
+5. Fund holdings analysis (13F-HR)
+6. Regulatory compliance monitoring
+
+**AI-Enhanced Workflows (2025 Trends):**
+1. Automated earnings call preparation
+2. Risk factor identification and drafting
+3. MD&A summarization for audit committees
+4. Debt agreement analysis and term extraction
+5. Real-time filing analysis (RBC's Aiden example)
+6. Multi-source financial modeling
+7. Automated three-statement model generation
+
+**Key Market Trend:**
+2025 represents significant shift toward AI-powered automation in SEC filing analysis. Companies like RBC using orchestration agents with specialized SEC filing agents.
+
+### AI Agent Orchestration Research
+
+**Orchestration Patterns:**
+- Multi-agent systems with specialized agents (SEC filing agent, earnings agent, news agent)
+- LangChain for building chains of LLM calls
+- LangGraph for complex workflows and state management
+- Graph-based visual workflow modeling
+
+**Compliance & Governance:**
+- Compliance gateways for automated validation
+- Full audit logging (queries, data accessed, tokens, evaluations)
+- SEC and FINRA regulatory tracking
+- Encrypted, immutable audit trails
+
+**Real-World Examples:**
+- RBC's Aiden platform with agent orchestration
+- Claude 3.5 Sonnet-powered financial analysis agents
+- Portfolio advisory, bookkeeping, fraud detection agents
+
+### Target Market Segments
+
+1. **Investment Firms & Hedge Funds**
+   - Due diligence workflows
+   - Real-time filing alerts
+   - Multi-company comparisons
+
+2. **Corporate Finance Teams**
+   - Competitor analysis
+   - Benchmark reporting
+   - Risk factor monitoring
+
+3. **Compliance & Legal Teams**
+   - Regulatory change tracking
+   - Disclosure analysis
+   - Audit trail generation
+
+4. **Financial Research Firms**
+   - Custom data extraction
+   - Industry trend analysis
+   - Historical data mining
+
+5. **Fintech Companies**
+   - API integration workflows
+   - Automated reporting systems
+   - Data pipeline design
+
+### Example Workflows Created
+
+Created three production-ready workflow examples:
+
+1. **Classic ETL Workflow** (example_classic_etl.py)
+   - Non-AI approach
+   - Financial statement extraction
+   - Data warehouse loading
+   - Scheduled execution pattern
+   - Use case: Regular reporting & benchmarking
+
+2. **AI-Augmented Risk Analysis** (example_ai_risk_analysis.py)
+   - Single-agent AI workflow
+   - Risk factor extraction and analysis
+   - Claude-powered categorization
+   - Structured outputs with audit logs
+   - Use case: Investment analyst research
+
+3. **Multi-Agent Orchestration** (example_multi_agent.py)
+   - LangGraph state machine
+   - 4 specialized agents: SEC Filing, Financial Analysis, Synthesis, Compliance
+   - Comprehensive due diligence workflow
+   - Full compliance and audit trail
+   - Use case: M&A due diligence
+
+### Key Technical Learnings
+
+**When to Use AI vs Non-AI:**
+- Deterministic tasks (XBRL parsing, financial ratios) → No AI needed
+- Natural language understanding (risk summaries, MD&A) → AI beneficial
+- Judgment and synthesis (recommendations, trend interpretation) → AI valuable
+- Data validation and compliance checks → Deterministic rules preferred
+
+**Workflow Pattern Selection:**
+- Simple, scheduled data extraction → Classic ETL
+- Real-time alerts → Event-driven pattern
+- Deep analysis of text → AI-augmented single agent
+- Complex multi-source synthesis → Multi-agent orchestration
+- Batch processing → Distributed worker pool
+
+**edgartools Best Practices:**
+- Built-in throttling respects SEC rate limits
+- Cache filings to avoid repeated requests
+- Text chunking feature ready for LLM processing
+- XBRL parsing is deterministic and reliable
+- Works well with both traditional and AI workflows
+
+### Web & Marketing Strategy (Bootstrapped)
+
+**Website Strategy:**
+- Minimal viable website (5 pages, static site generator)
+- Initial cost: ~$150, Monthly: $15-30
+- Platform: Next.js or Astro on Vercel (free tier)
+- Focus: Fast, professional, trust-building
+
+**Content Marketing (Primary Channel - 40% of leads):**
+- Technical blog with 4 content pillars: edgartools mastery, SEC workflows, AI agents, case studies
+- Publishing: 1-2 posts per week
+- SEO-focused for organic growth
+- Expected traffic: 2,000-5,000 visitors/month by Month 12
+
+**Social Media:**
+- LinkedIn (primary B2B): Personal profile first, 3-5 posts/week, 5-3-2 content mix
+- Twitter/X (developer community): 1-3 tweets/day
+- GitHub (credibility): Public examples repo (secflow-examples), active edgartools maintenance
+- YouTube (optional, defer to Month 6+)
+
+**Email Marketing:**
+- Newsletter "SEC Workflow Insights" (weekly on Fridays)
+- 4 lead magnets: Workflow Starter Kit, edgartools Mastery Guide, AI Agents Playbook, DD Blueprint
+- Welcome sequence (5 emails/10 days) + nurture sequences
+- Mailchimp free tier → upgrade at 500 subscribers
+
+**Thought Leadership & Speaking:**
+- Conference speaking: Start local meetups → larger conferences
+- Webinars: 1 per quarter starting Month 4
+- Podcast guest appearances: Pitch to FinTech, Python, AI/ML podcasts
+- Talk topics: AI for SEC analysis, edgartools tutorials, multi-agent systems, transformation stories
+
+**Community & Open Source:**
+- edgartools community building (leverage existing asset)
+- Public examples repository (secflow-examples) with 10-15 production-ready workflows
+- Office hours (monthly, free Zoom calls)
+- Discord/Slack community for users
+
+**Strategic Partnerships (No/Low Cost):**
+- Anthropic: Case studies, co-marketing, potential credits
+- LangChain/LangGraph: Example contributions, community visibility
+- Cloud providers: AWS Activate, GCP for Startups ($10K-$100K credits)
+- Financial data providers: Referral partnerships
+
+**Bootstrapped Budget:**
+- Initial setup: $5,000-$10,000 (can start at ~$1,000)
+- Monthly operating (Months 1-6): $1,000-$2,000
+- Year 1 total marketing: $10,000-$25,000
+- ROI target: $2M+ revenue from $15K-$20K marketing investment (100:1+ ratio)
+
+**90-Day Launch Plan:**
+- Month 1: Foundation (website live, 4 blog posts, social setup, first lead magnet)
+- Month 2: Content & outreach (8 total posts, 50+ email subscribers, speaking submissions, GitHub examples)
+- Month 3: Traction & sales (12+ posts, 100+ subscribers, 10-20 discovery calls, 1-3 customers)
+
+**Success Metrics (First 90 Days):**
+- 500-1,000 monthly website visitors
+- 100-200 email subscribers
+- 12-16 blog posts published
+- 5-10 contact form submissions
+- 10-20 calendar bookings
+- 1-3 customers signed
+- $25K-$100K in pipeline
+
+**Key Marketing Principles:**
+1. Time over money (founder-led, content-driven)
+2. Quality over quantity (one great post > ten mediocre)
+3. Compound growth (every asset builds over time)
+4. Leverage edgartools as primary marketing asset
+5. Authentic expertise, help first, sell second
+6. Stay lean, upgrade only with proven ROI
+7. Focus on ideal customer (investment firms, hedge funds, corporate finance)
+
+**Long-term Evolution:**
+- Months 4-6: Optimization, small paid experiments, formalize partnerships
+- Months 7-12: Scale with part-time help, expand to video/podcast, increase events
+- Year 2+: Platform build (marketplace), community program, sophisticated ABM
+
+### UX Design Guide (Post-SaaS, AI-Native)
+
+**Design Philosophy:**
+- Post-SaaS aesthetic (beyond generic blue gradients)
+- AI-native visual language
+- Upscale, elegant, techie positioning
+- Financial services sophistication
+
+**Color System:**
+- Primary dark palette: Obsidian (#0A0E1A), Slate (#1A1F2E), Graphite (#2A2F3E)
+- Accent colors: Electric Teal (#00D9D9), Quantum Violet (#8B5CF6)
+- Data colors: Signal Green, Amber Alert, Critical Red
+- Light mode support with Cloud Gray and Ghost White
+
+**Typography:**
+- Primary: Inter (modern, screen-optimized, open source)
+- Monospace: JetBrains Mono (developer credibility)
+- Type scale: 1.250 (Major Third) desktop, 1.200 (Minor Third) mobile
+- Line height: 1.6 body, 1.2 headings
+
+**Visual Style:**
+- Dark-first design (sophisticated, technical)
+- Subtle gradients (Teal to Violet)
+- Refined shadows and depth (6-level elevation system)
+- Pattern backgrounds (grid, dots, noise texture)
+- Border radius: 4px (small) to 16px (large)
+
+**Components:**
+- Primary buttons: Electric Teal with hover lift
+- AI feature buttons: Animated gradient (Teal to Violet)
+- Cards: Slate background, subtle borders, hover elevation
+- Inputs: Dark with Teal focus states
+- Navigation: Sticky, blur backdrop
+- Loading states: Teal spinner, shimmer skeletons
+
+**Layout:**
+- 12-column grid system
+- 8px spacing scale
+- Container widths: 1280px (XL), 1024px (L), 768px (M), 640px (S)
+- Breakpoints: 640px, 768px, 1024px, 1280px, 1536px
+
+**Motion & Animation:**
+- Fast transitions: 150-200ms
+- Ease-out timing function
+- Subtle hover effects (lift, glow)
+- Loading animations (shimmer, pulse)
+- AI elements: Glow pulse, gradient shift
+
+**Accessibility:**
+- WCAG 2.1 AA compliance minimum (AAA target)
+- Color contrast: 15.8:1 (text on dark), 12.6:1 (text on light)
+- Keyboard navigation fully supported
+- Focus states visible
+- Screen reader optimized
+- Reduced motion respected
+
+**Implementation:**
+- Utility-first with Tailwind CSS (rapid development)
+- Radix UI primitives (accessible, unstyled)
+- Mobile-first responsive design
+- Performance targets: LCP < 2.5s, FCP < 1.5s, Lighthouse 90+
+
+**Brand Applications:**
+- Logo: Teal icon with wordmark
+- Marketing: Dark cards, subtle patterns, gradient accents
+- Social media: Consistent branded templates
+- Email: Professional signature with Teal accents
+
+**Key Differentiators:**
+1. Dark-first (not an afterthought)
+2. Teal + Violet palette (unique, memorable)
+3. Technical precision (every detail considered)
+4. Post-SaaS refinement (sophisticated, not generic)
+5. AI-native design language
+
+### Backend Infrastructure (Production-Ready)
+
+**Cloud Strategy:**
+- Multi-cloud approach with AWS primary
+- Serverless-first (Lambda, Fargate)
+- Cost-optimized for bootstrapped operations
+- Free tier aggressive usage
+
+**Architecture Layers:**
+1. Client Layer (web, API, notifications)
+2. API Gateway (auth, rate limiting, routing)
+3. Application Layer (FastAPI, workflow orchestration)
+4. Compute Layer (Lambda, ECS, EC2)
+5. Data Layer (S3, PostgreSQL, Redis)
+6. External Services (SEC EDGAR, AI APIs)
+7. Observability (logging, metrics, tracing)
+
+**Compute Options:**
+- Lambda: Event-driven, < 15 min tasks, $0-5/month
+- ECS Fargate: Long-running, containerized, $12-36/month
+- EC2: Orchestrators, reserved instances, $18-30/month
+- Decision matrix based on workload characteristics
+
+**Data Storage:**
+- S3: Object storage with lifecycle policies ($2-8/month)
+- RDS PostgreSQL: Relational data, free tier → $30-60/month
+- TimescaleDB: Time series metrics (PostgreSQL extension)
+- Redis (ElastiCache): Caching, queues, sessions ($12-30/month)
+
+**Orchestration Options:**
+1. Apache Airflow: Complex pipelines, mature, self-hosted ($18-30/month)
+2. Prefect: Modern Python API, cloud free tier ($0-15/month)
+3. Step Functions: Serverless, simple workflows ($0-5/month)
+- Recommendation: Start Prefect/Step Functions → Scale to Airflow
+
+**Security & Compliance:**
+- IAM roles (no access keys)
+- Secrets Manager for API keys
+- VPC with private subnets
+- Encryption at rest and in transit
+- Audit logging (immutable, PostgreSQL rules)
+- SOC 2 Type II readiness
+- FINRA/SEC compliance support
+
+**Monitoring & Observability:**
+- Structured logging (JSON format)
+- CloudWatch (AWS native, free tier) or Loki (self-hosted, $15/month)
+- Metrics: CloudWatch, Prometheus+Grafana, or DataDog ($30/month)
+- Alerting: Email, Slack, PagerDuty
+- Key metrics: execution time, success rate, API latency, costs
+
+**CI/CD Pipeline:**
+- GitHub Actions (free for public repos)
+- Infrastructure as Code (Terraform)
+- Automated testing (pytest)
+- Docker containers (ECR)
+- Blue-green deployments (ECS)
+
+**Cost Breakdown:**
+- MVP (0-10 customers): $30-50/month
+- Growth (10-50 customers): $200-300/month
+- Scale (50+ customers): $1,000-2,000/month
+- Primary costs: compute, database, monitoring, AI APIs
+
+**Cost Optimization:**
+- Free tiers (Lambda 1M requests, RDS 750 hours)
+- Reserved instances (40% savings on baseline)
+- Spot instances (70% savings on batch jobs)
+- S3 lifecycle policies (80% savings on archives)
+- Redis caching (reduces API calls 50-80%)
+- AI API optimization (caching, batching)
+
+**Disaster Recovery:**
+- RTO: 4 hours, RPO: 1 hour
+- Daily automated backups (7 day retention)
+- Cross-region replication for critical data
+- Infrastructure as Code for rapid rebuild
+- Tested recovery procedures
+
+**Scaling Strategy:**
+- Phase 1 (MVP): Lambda + free tiers ($30-50/month)
+- Phase 2 (Growth): Add Fargate + Airflow ($200-300/month)
+- Phase 3 (Scale): Auto-scaling, read replicas ($1,000-2,000/month)
+- Triggers: queue depth, CPU, memory, custom metrics
+
+**Implementation Checklist:**
+- Week 1: AWS setup, VPC, S3, RDS, Redis, IAM
+- Week 2-3: Deploy workflows, API, auth, monitoring
+- Week 4-6: Security hardening, backups, DR, optimization
+- Ongoing: Cost monitoring, security reviews, updates
+
+### Project Deliverables
+
+Complete research package includes:
+1. README.md - Comprehensive research report (2,500+ lines)
+2. notes.md - This research log
+3. agency-design.md - Business model and positioning
+4. technical-architecture.md - Technical architecture and patterns
+5. business-considerations.md - Financial analysis and projections
+6. web-marketing-strategy.md - Marketing and web presence strategy (bootstrapped)
+7. ux-design-guide.md - Complete UX/UI design system (post-SaaS, AI-native)
+8. backend-infrastructure.md - Production backend infrastructure (cloud, security, scaling)
+9. example_classic_etl.py - Production ETL workflow
+10. example_ai_risk_analysis.py - AI risk analysis workflow
+11. example_multi_agent.py - Multi-agent orchestration workflow
+
